@@ -1,13 +1,168 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<html lang="en" data-theme="valentine">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memes</title>
+</head>
+
+<body>
+  <div id="app" class="max-w-[100%] min-h-[100vh] flex">
+    <!-- Section for lg screen Favourite Memes -->
+    <section
+      class="lg:w-[400px] lg:h-[100vh] w-0 h-0  overflow-y-scroll sticky top-0 no-scrollbar border-r-[1px] border-color">
+      <header class="w-full h-[80px] border-b-[1px] border-color">
+        <h1 class="font-bold text-lg text-center translate-y-[100%]">Favourite Memes</h1>
+      </header>
+      <!-- Fovourite divs -->
+      <main class="flex flex-col gap-2 p-1">
+        <div class="w-full h-[60px] flex justify-between items-center p-1 gap-2 hover:shadow-md">
+          <img src="./icons8-theme-96.png" alt="chobi" width="40px" height="40px" class="bg-current rounded-md">
+          <p class="overflow-hidden text-lg text-ellipsis whitespace-nowrap text-left w-[190px]">
+            nasdasdasdaaaaaaaaaaaaaaaaaaaame
+            is abid Hellofdsf</p>
+          <button class="text-2xl">&#10084;</button>
+        </div>
+      </main>
+    </section>
+
+    <!-- Section for memes, search etc -->
+    <section class="w-[100%] min-h-[100vh] ">
+      <header
+        class="w-full h-[80px] border-b-[1px] border-color flex justify-between items-center sm:px-2 px-[2px] gap-2">
+        <!-- Search Form -->
+        <form action="">
+          <label class="input input-bordered rounded-sm flex items-center gap-2 sm:h-[48px] h-[38px]">
+            <input type="text" class="sm:w-[350px] w-[100%]" placeholder="Search Memes" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+              <path fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd" />
+            </svg>
+          </label>
+        </form>
+        <!-- Dropdown for theme with Collapse icon -->
+        <div tabindex="0" class="dropdown collapse-arrow dropdown-bottom dropdown-end hidden lg:block">
+          <div class="collapse-title font-medium flex justify-between items-center btn">
+            <img src="./icons8-theme-96.png" alt="" width="25px" height="25px">
+            <p class="text-base font-semibold">Theme</p>
+          </div>
+          <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
+            <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar">
+              <li><a href="/a">Item 1</a></li>
+              <li><a href="/b">Item 2</a></li>
+            </div>
+          </ul>
+        </div>
+        <!-- Drawer navigation for bellow lg screen -->
+        <div class="drawer drawer-end lg:hidden w-[50px]">
+          <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content z-[2]">
+            <!-- Hambarg Menu button for Drawer -->
+            <label for="my-drawer-4" class="btn btn-outline btn-circle w-[100%]">
+              <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                viewBox="0 0 512 512">
+                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+              </svg>
+            </label>
+          </div>
+          <!-- Sidebar content here -->
+          <div class="drawer-side">
+            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-1  min-h-full bg-base-200 text-base-content w-[275px]">
+              <!-- Dropdown for theme with Collapse icon -->
+              <li class="w-full border-b-[1px] border-color">
+                <div tabindex="0" class="w-[150px] dropdown collapse-arrow dropdown-bottom">
+                  <div class="collapse-title font-medium flex justify-between items-center">
+                    <img src="./icons8-theme-96.png" alt="" width="25px" height="25px">
+                    <p class="text-base font-semibold">Theme</p>
+                  </div>
+                  <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
+                    <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar">
+                      <li><a href="/a">Item 1</a></li>
+                      <li><a href="/b">Item 2</a></li>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+              <li class="flex items-center border-b-[1px] border-color">
+                <h1 class="text-center">Favourite Memes</h1>
+              </li>
+              <!-- Fovourite Memes divs -->
+              <li>
+                <main class="flex flex-col gap-2 p-1">
+                  <div class="w-full h-[60px] flex justify-between items-center p-1 gap-2 hover:shadow-md">
+                    <img src="./icons8-theme-96.png" alt="chobi" width="40px" height="40px"
+                      class="bg-current rounded-md">
+                    <p class="text-lg overflow-hidden text-ellipsis whitespace-nowrap text-left w-[190px]">
+                      nasdasdasdaaaaaaaaaaaaaaaaaaaame
+                      is abid Hellofdsf</p>
+                    <button class="text-2xl">&#10084;</button>
+                  </div>
+                </main>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-2">
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">Press ESC key or click the button below to close</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+        <!-- Msg and Modal Open Button -->
+        <div class="flex flex-col justify-center items-center">
+          <h1>You need an API key to get the memes feed.</h1>
+          <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        </div>
+
+        <!-- Memes Feed section -->
+        <section class="xl:columns-4 md:columns-3 sm:columns-2 justify-center items-center gap-0">
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img1.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img2.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img3.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img7.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img8.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img4.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+            <img src="./img5.jpg" alt="" class="w-full h-full object-cover align-middle">
+          </div>
+        </section>
+      </main>
+    </section>
+
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
