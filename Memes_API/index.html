@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en" data-theme="valentine">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Memes</title>
 </head>
 
@@ -23,7 +24,7 @@
           <p class="overflow-hidden text-lg text-ellipsis whitespace-nowrap text-left w-[190px]">
             nasdasdasdaaaaaaaaaaaaaaaaaaaame
             is abid Hellofdsf</p>
-          <button class="text-2xl">&#10084;</button>
+          <i class="material-icons">favorite</i>
         </div>
       </main>
     </section>
@@ -50,14 +51,36 @@
             <p class="text-base font-semibold">Theme</p>
           </div>
           <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
-            <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar">
-              <li><a href="/a">Item 1</a></li>
-              <li><a href="/b">Item 2</a></li>
+            <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar theme-btn">
+              <li>
+                <p>light</p>
+              </li>
+              <li>
+                <p>dark</p>
+              </li>
+              <li>
+                <p>cupcake</p>
+              </li>
+              <li>
+                <p>bumblebee</p>
+              </li>
+              <li>
+                <p>synthwave</p>
+              </li>
+              <li>
+                <p>retro</p>
+              </li>
+              <li>
+                <p>cyberpunk</p>
+              </li>
+              <li>
+                <p>valentine</p>
+              </li>
             </div>
           </ul>
         </div>
         <!-- Drawer navigation for bellow lg screen -->
-        <div class="drawer drawer-end lg:hidden w-[50px]">
+        <div class="drawer drawer-end lg:hidden w-[50px] z-10">
           <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
           <div class="drawer-content z-[2]">
             <!-- Hambarg Menu button for Drawer -->
@@ -80,9 +103,31 @@
                     <p class="text-base font-semibold">Theme</p>
                   </div>
                   <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
-                    <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar">
-                      <li><a href="/a">Item 1</a></li>
-                      <li><a href="/b">Item 2</a></li>
+                    <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar theme-btn">
+                      <li>
+                        <p>light</p>
+                      </li>
+                      <li>
+                        <p>dark</p>
+                      </li>
+                      <li>
+                        <p>cupcake</p>
+                      </li>
+                      <li>
+                        <p>bumblebee</p>
+                      </li>
+                      <li>
+                        <p>synthwave</p>
+                      </li>
+                      <li>
+                        <p>retro</p>
+                      </li>
+                      <li>
+                        <p>cyberpunk</p>
+                      </li>
+                      <li>
+                        <p>valentine</p>
+                      </li>
                     </div>
                   </ul>
                 </div>
@@ -99,7 +144,7 @@
                     <p class="text-lg overflow-hidden text-ellipsis whitespace-nowrap text-left w-[190px]">
                       nasdasdasdaaaaaaaaaaaaaaaaaaaame
                       is abid Hellofdsf</p>
-                    <button class="text-2xl">&#10084;</button>
+                    <i class="material-icons">favorite</i>
                   </div>
                 </main>
               </li>
@@ -111,52 +156,34 @@
       <main class="p-2">
         <!-- Open the modal using ID.showModal() method -->
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
-            <h3 class="font-bold text-lg">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
-            <div class="modal-action">
-              <form method="dialog">
+          <div class="modal-box p-2 m-0 ">
+            <div class="modal-action p-0 m-0">
+              <form method="dialog" class="flex gap-4 justify-between p-0 m-0">
                 <button class="btn">Close</button>
               </form>
             </div>
+            <!-- API key setup form -->
+            <form action="" class="flex flex-col gap-2" id="setkey" method="dialog">
+              <h3 class="font-bold text-lg">API KEY:</h3>
+              <input type="text" name="key" id="" class="w-full h-11 p-2 border-[2px]">
+              <button class="btn font-semibold text-lg" type="submit">Save</button>
+            </form>
           </div>
         </dialog>
         <!-- Msg and Modal Open Button -->
-        <div class="flex flex-col justify-center items-center">
-          <h1>You need an API key to get the memes feed.</h1>
-          <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-        </div>
+        <div class="flex flex-col justify-center items-center" id="apimodal">
 
+        </div>
+        <!-- No memes alert div -->
+        <div class="text-center my-3" id="nomemes">
+
+        </div>
         <!-- Memes Feed section -->
-        <section class="xl:columns-4 md:columns-3 sm:columns-2 justify-center items-center gap-0">
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
+        <section class="xl:columns-4 md:columns-3 sm:columns-2 justify-center items-center gap-0" id="memesfeed">
+          <!-- <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
+            <i class="material-icons absolute hover:cursor-pointer">favorite</i>
             <img src="./img1.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img2.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img3.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img7.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img8.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img4.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
-          <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <button class="text-2xl absolute outline-2 outline">&#10084;</button>
-            <img src="./img5.jpg" alt="" class="w-full h-full object-cover align-middle">
-          </div>
+          </div> -->
         </section>
       </main>
     </section>
