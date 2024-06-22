@@ -17,15 +17,15 @@
       <header class="w-full h-[80px] border-b-[1px] border-color">
         <h1 class="font-bold text-lg text-center translate-y-[100%]">Favourite Memes</h1>
       </header>
-      <!-- Fovourite divs -->
-      <main class="flex flex-col gap-2 p-1">
-        <div class="w-full h-[60px] flex justify-between items-center p-1 gap-2 hover:shadow-md">
-          <img src="./icons8-theme-96.png" alt="chobi" width="40px" height="40px" class="bg-current rounded-md">
-          <p class="overflow-hidden text-lg text-ellipsis whitespace-nowrap text-left w-[190px]">
-            nasdasdasdaaaaaaaaaaaaaaaaaaaame
-            is abid Hellofdsf</p>
-          <i class="material-icons">favorite</i>
-        </div>
+      <!-- Fovourite memes divs -->
+      <main class="flex flex-col gap-2 p-1 favourite">
+        <!-- <div class="w-full h-[60px] flex items-center p-1 gap-2 hover:shadow-md border-b-2">
+          <img src="https://i.redd.it/on7i5av6r66d1.jpeg" alt="chobi"
+            class="border-2 rounded-md object-cover w-[50px] h-full">
+          <p class="overflow-hidden text-lg text-ellipsis whitespace-nowrap text-left w-[190px]">js</p>
+          <i class="material-icons h-full flex items-center cursor-pointer active:scale-75"
+            style="font-size:24px;color: crimson;">delete</i>
+        </div> -->
       </main>
     </section>
 
@@ -34,9 +34,10 @@
       <header
         class="w-full h-[80px] border-b-[1px] border-color flex justify-between items-center sm:px-2 px-[2px] gap-2">
         <!-- Search Form -->
-        <form action="">
+        <form action="" method="dialog">
           <label class="input input-bordered rounded-sm flex items-center gap-2 sm:h-[48px] h-[38px]">
-            <input type="text" class="sm:w-[350px] w-[100%]" placeholder="Search Memes" />
+            <input type="text" class="sm:w-[350px] w-[100%]" placeholder="Search memes" name="search"
+              id="searchinput" />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
               <path fill-rule="evenodd"
                 d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
@@ -100,7 +101,7 @@
                 <div tabindex="0" class="w-[150px] dropdown collapse-arrow dropdown-bottom">
                   <div class="collapse-title font-medium flex justify-between items-center">
                     <img src="./icons8-theme-96.png" alt="" width="25px" height="25px">
-                    <p class="text-base font-semibold">Theme</p>
+                    <p class="text-base font-semibold pr-4">Theme</p>
                   </div>
                   <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
                     <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar theme-btn">
@@ -136,17 +137,16 @@
                 <h1 class="text-center">Favourite Memes</h1>
               </li>
               <!-- Fovourite Memes divs -->
-              <li>
-                <main class="flex flex-col gap-2 p-1">
-                  <div class="w-full h-[60px] flex justify-between items-center p-1 gap-2 hover:shadow-md">
-                    <img src="./icons8-theme-96.png" alt="chobi" width="40px" height="40px"
-                      class="bg-current rounded-md">
-                    <p class="text-lg overflow-hidden text-ellipsis whitespace-nowrap text-left w-[190px]">
-                      nasdasdasdaaaaaaaaaaaaaaaaaaaame
-                      is abid Hellofdsf</p>
-                    <i class="material-icons">favorite</i>
-                  </div>
-                </main>
+              <li class="flex flex-col gap-2 p-1 favourite">
+                <!-- <main > -->
+                <!-- <div class="w-full h-[60px] flex items-center p-1 gap-1 hover:shadow-md border-b-2">
+                    <img src="https://i.redd.it/on7i5av6r66d1.jpeg" alt="chobi"
+                      class="border-2 rounded-md object-cover w-[50px] h-full">
+                    <p class="overflow-hidden text-lg text-ellipsis whitespace-nowrap text-left w-[190px]">js</p>
+                    <i class="material-icons h-full flex items-center cursor-pointer"
+                      style="font-size:24px;color: crimson;">delete</i>
+                  </div> -->
+                <!-- </main> -->
               </li>
             </ul>
           </div>
@@ -180,9 +180,9 @@
         </div>
         <!-- Memes Feed section -->
         <section class="xl:columns-4 md:columns-3 sm:columns-2 justify-center items-center gap-0" id="memesfeed">
-          <!-- <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all">
-            <i class="material-icons absolute hover:cursor-pointer">favorite</i>
-            <img src="./img1.jpg" alt="" class="w-full h-full object-cover align-middle">
+          <!-- <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all meme" id="${meme.id}">
+            <i class="material-icons absolute hidden w-[30px] h-[30px] top-2 left-2 text-[#FF3D00] love">favorite</i>
+            <img src="${meme.url}" alt="" class="w-full h-full object-cover align-middle">
           </div> -->
         </section>
       </main>

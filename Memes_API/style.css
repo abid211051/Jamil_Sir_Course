@@ -26,4 +26,15 @@
     scrollbar-width: none;
     /* Firefox */
   }
+
+  .meme:hover>.love {
+    background-color: cornsilk;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+  }
+
 }
