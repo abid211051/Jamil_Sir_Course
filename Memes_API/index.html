@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="emoji.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <title>Memes</title>
+  <title>MemeStream</title>
 </head>
 
 <body>
@@ -14,8 +14,12 @@
     <!-- Section for lg screen Favourite Memes -->
     <section
       class="lg:w-[400px] lg:h-[100vh] w-0 h-0  overflow-y-scroll sticky top-0 no-scrollbar border-r-[1px] border-color">
-      <header class="w-full h-[80px] border-b-[1px] border-color">
-        <h1 class="font-bold text-lg text-center translate-y-[100%]">Favourite Memes</h1>
+      <header class="w-full h-[80px] border-b-[1px] border-color flex items-center px-2">
+        <div class="w-[50%] h-full flex justify-start items-center">
+          <img src="emoji.png" alt="" class="h-[50%]">
+          <p class="text-sm font-medium font-serif">MemeStream</p>
+        </div>
+        <h1 class="font-bold text-lg text-center border-l-2 pl-4 border-color">favourites</h1>
       </header>
       <!-- Fovourite memes divs -->
       <main class="flex flex-col gap-2 p-1 favourite">
@@ -53,30 +57,7 @@
           </div>
           <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
             <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar theme-btn">
-              <li>
-                <p>light</p>
-              </li>
-              <li>
-                <p>dark</p>
-              </li>
-              <li>
-                <p>cupcake</p>
-              </li>
-              <li>
-                <p>bumblebee</p>
-              </li>
-              <li>
-                <p>synthwave</p>
-              </li>
-              <li>
-                <p>retro</p>
-              </li>
-              <li>
-                <p>cyberpunk</p>
-              </li>
-              <li>
-                <p>valentine</p>
-              </li>
+
             </div>
           </ul>
         </div>
@@ -105,30 +86,7 @@
                   </div>
                   <ul class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-50">
                     <div class="w-52 h-[400px] overflow-y-scroll no-scrollbar theme-btn">
-                      <li>
-                        <p>light</p>
-                      </li>
-                      <li>
-                        <p>dark</p>
-                      </li>
-                      <li>
-                        <p>cupcake</p>
-                      </li>
-                      <li>
-                        <p>bumblebee</p>
-                      </li>
-                      <li>
-                        <p>synthwave</p>
-                      </li>
-                      <li>
-                        <p>retro</p>
-                      </li>
-                      <li>
-                        <p>cyberpunk</p>
-                      </li>
-                      <li>
-                        <p>valentine</p>
-                      </li>
+
                     </div>
                   </ul>
                 </div>
@@ -178,6 +136,7 @@
         <div class="text-center my-3" id="nomemes">
 
         </div>
+
         <!-- Memes Feed section -->
         <section class="xl:columns-4 md:columns-3 sm:columns-2 justify-center items-center gap-0" id="memesfeed">
           <!-- <div class="w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all meme" id="${meme.id}">
