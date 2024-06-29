@@ -10,14 +10,6 @@
     will-change: auto;
   }
 
-  .border-color {
-    border-color: rgba(100, 116, 139, 0.8);
-  }
-
-  .rotate {
-    transform: rotate(0.5turn);
-  }
-
   /* Hide scrollbar for IE, Edge, and Firefox */
   .no-scrollbar {
     will-change: auto;
@@ -25,6 +17,10 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+  }
+
+  .border-color {
+    border-color: rgba(100, 116, 139, 0.8);
   }
 
   .meme:hover>.love {

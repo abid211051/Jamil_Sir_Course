@@ -14,7 +14,7 @@
     <!-- Section for lg screen Favourite Memes -->
     <section
       class="lg:w-[400px] lg:h-[100vh] w-0 h-0  overflow-y-scroll sticky top-0 no-scrollbar border-r-[1px] border-color">
-      <header class="w-full h-[80px] border-b-[1px] border-color flex items-center px-2">
+      <header class="w-full h-[85px] border-b-[1px] border-color flex items-center px-2">
         <div class="w-[50%] h-full flex justify-start items-center">
           <img src="emoji.png" alt="" class="h-[50%]">
           <p class="text-sm font-medium font-serif">MemeStream</p>
@@ -36,7 +36,7 @@
     <!-- Section for memes, search etc -->
     <section class="w-[100%] min-h-[100vh] ">
       <header
-        class="w-full h-[80px] border-b-[1px] border-color flex justify-between items-center sm:px-2 px-[2px] gap-2">
+        class="w-full h-[85px] border-b-[1px] border-color flex justify-between items-center sm:px-2 px-[2px] gap-2">
         <!-- Search Form -->
         <form action="" method="dialog">
           <label class="input input-bordered rounded-sm flex items-center gap-2 sm:h-[48px] h-[38px]">
@@ -48,6 +48,7 @@
                 clip-rule="evenodd" />
             </svg>
           </label>
+          <h1 class="text-xs text-orange-500" id="inp-warning"></h1>
         </form>
         <!-- Dropdown for theme with Collapse icon -->
         <div tabindex="0" class="dropdown collapse-arrow dropdown-bottom dropdown-end hidden lg:block">
@@ -123,6 +124,23 @@
             <!-- API key setup form -->
             <form action="" class="flex flex-col gap-2" id="setkey" method="dialog">
               <h3 class="font-bold text-lg">API KEY:</h3>
+              <input type="text" name="key" id="" class="w-full h-11 p-2 border-[2px]">
+              <button class="btn font-semibold text-lg" type="submit">Save</button>
+            </form>
+          </div>
+        </dialog>
+
+        <!-- Modal to take user defined meme's name -->
+        <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box p-2 m-0 ">
+            <div class="modal-action p-0 m-0">
+              <form method="dialog" class="flex gap-4 justify-between p-0 m-0">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+            <!-- Meme's Name set up form -->
+            <form action="" class="flex flex-col gap-2" id="setkey" method="dialog">
+              <h3 class="font-bold text-lg">Memes Name:</h3>
               <input type="text" name="key" id="" class="w-full h-11 p-2 border-[2px]">
               <button class="btn font-semibold text-lg" type="submit">Save</button>
             </form>

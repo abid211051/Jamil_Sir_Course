@@ -8,6 +8,7 @@ let themeBtn;
 let searchBar;
 let favouriteMemes;
 let url;
+let inputWarning;
 let themes = [
     "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween",
     "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business",
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", initialize);
 function initialize() {
     if (window.location.pathname === "/") {
         window.location.replace(`http://localhost:5173/meme?demo=&theme=`);
+        return;
     }
     url = new URL(window.location);
     favouriteMemes = document.querySelectorAll(".favourite");
@@ -30,6 +32,7 @@ function initialize() {
     apiModal = document.querySelector("#apimodal");
     memesfeed = document.querySelector("#memesfeed");
     nomemesAlert = document.querySelector("#nomemes");
+    inputWarning = document.querySelector("#inp-warning");
     apiKeyForm.addEventListener('submit', saveApiKey)
     searchBar.addEventListener("input", searchInput);
     makeThemeBtn();
@@ -42,9 +45,14 @@ function initialize() {
 let callfetch;
 function searchInput(e) {
     clearTimeout(callfetch);
-    callfetch = setTimeout(() => {
-        getMemes(e.target.value)
-    }, 2000)
+    if (e.target.value.length != 0 && e.target.value.length < 3) {
+        inputWarning.textContent = `Need ${3 - e.target.value.length} more character`;
+    } else {
+        inputWarning.textContent = "";
+        callfetch = setTimeout(() => {
+            getMemes(e.target.value)
+        }, 2000)
+    }
 }
 
 // creating list of theme button and adding click event on them
@@ -98,16 +106,16 @@ function saveApiKey(e) {
 
 // Showing API key modal button when no "apikey" in localStorage.
 function showModal() {
-    apiModal.innerHTML = "";
+    apiModal.textContent = "";
     const h1 = document.createElement("h1");
-    h1.innerText = "You need an API key to get the memes feed.";
     const button = document.createElement("button");
+    h1.innerText = "You need an API key to get the memes feed.";
     button.setAttribute("class", "btn");
     button.addEventListener("click", () => my_modal_5.showModal());
     button.innerText = "set an API key";
     apiModal.appendChild(h1);
     apiModal.appendChild(button);
-    memesfeed.innerHTML = "";
+    memesfeed.textContent = "";
 }
 
 // Getting all memes if apikey is found in localStorage.
@@ -122,6 +130,12 @@ async function getMemes(keyword) {
         }
         const res = await fetch(reqUrl);
         if (!res.ok) {
+            /* Loop until firstChild of a div is present, and if firstChild is present then remove it. [removing each node inside an element] */
+            // while (nomemesAlert.firstChild) {
+            //     console.log(nomemesAlert.firstChild);
+            //     nomemesAlert.removeChild(nomemesAlert.firstChild)
+            // }
+            nomemesAlert.textContent = "";
             const p1 = document.createElement("p");
             const p2 = document.createElement("p");
             const a = document.createElement("a");
@@ -139,18 +153,19 @@ async function getMemes(keyword) {
         }
         const data = await res.json();
         const favourite = localStorage.getItem("favourite");
+        memesfeed.textContent = "";
         for (const meme of data.memes) {
             const div = document.createElement("div");
             const i = document.createElement("i");
             const img = document.createElement("img");
-            div.setAttribute("class", "w-[100%] h-auto p-1 relative hover:scale-[102%] transition-all meme");
+            div.setAttribute("class", "w-[100%] h-auto sm:p-[7px] py-[7px] relative hover:scale-[101%] hover:border transition-all meme");
             div.setAttribute("id", `${meme.id}`);
             favourite && JSON.parse(favourite).some(ele => ele.id === `${meme.id}`) ?
                 i.setAttribute("class", "material-icons absolute hidden w-[30px] h-[30px] top-2 left-2 text-[#FF3D00] active:scale-75 love")
                 :
                 i.setAttribute("class", "material-icons absolute hidden w-[30px] h-[30px] top-2 left-2 active:scale-75 love");
             i.setAttribute("id", `${meme.id}`);
-            i.innerText = 'favorite';
+            i.textContent = 'favorite';
             img.setAttribute("class", "w-full h-full object-cover align-middle");
             img.setAttribute("alt", `${meme.description}`);
             img.setAttribute("src", `${meme.url}`);
@@ -158,8 +173,8 @@ async function getMemes(keyword) {
             div.appendChild(img);
             memesfeed.appendChild(div);
         }
-        apiModal.innerHTML = "";
-        nomemesAlert.innerHTML = "";
+        apiModal.textContent = "";
+        nomemesAlert.textContent = "";
         document.querySelectorAll(".love").forEach(itag => {
             itag.addEventListener("click", addToFavouriteList);
         })
@@ -170,25 +185,34 @@ async function getMemes(keyword) {
 
 // Adding favourite memes in localStorage on click and changing <i> tag color.
 function addToFavouriteList(e) {
-    const newData = {
-        id: e.target.parentElement.id,
-        desc: e.target.nextElementSibling.alt,
-        img: e.target.nextElementSibling.src
-    }
-    e.target.classList.add("text-[#FF3D00]");
-    const favourite = localStorage.getItem("favourite");
-    if (favourite) {
-        const previousItem = JSON.parse(favourite);
-        for (const iterator of previousItem) {
-            if (iterator.id === e.target.parentElement.id) return;
-        }
-        previousItem.push(newData);
-        localStorage.setItem("favourite", JSON.stringify(previousItem));
-        showFavouriteMemes()
-        return;
-    }
-    localStorage.setItem("favourite", JSON.stringify([newData]));
-    showFavouriteMemes()
+    my_modal_6.showModal()
+    // const h1 = document.createElement("h1");
+    // const button = document.createElement("button");
+    // h1.innerText = "You need an API key to get the memes feed.";
+    // button.setAttribute("class", "btn");
+    // button.addEventListener("click", () => my_modal_6.showModal());
+    // button.innerText = "set an API key";
+    // apiModal.appendChild(h1);
+    // apiModal.appendChild(button);
+    // const newData = {
+    //     id: e.target.parentElement.id,
+    //     desc: e.target.nextElementSibling.alt,
+    //     img: e.target.nextElementSibling.src
+    // }
+    // e.target.classList.add("text-[#FF3D00]");
+    // const favourite = localStorage.getItem("favourite");
+    // if (favourite) {
+    //     const previousItem = JSON.parse(favourite);
+    //     for (const iterator of previousItem) {
+    //         if (iterator.id === e.target.parentElement.id) return;
+    //     }
+    //     previousItem.push(newData);
+    //     localStorage.setItem("favourite", JSON.stringify(previousItem));
+    //     showFavouriteMemes()
+    //     return;
+    // }
+    // localStorage.setItem("favourite", JSON.stringify([newData]));
+    // showFavouriteMemes()
 }
 
 // Displaing all the favourite memes from localStorage in favourite List.
@@ -197,7 +221,7 @@ function showFavouriteMemes() {
     if (favourite) {
         const previousItem = JSON.parse(favourite);
         favouriteMemes.forEach((main) => {
-            main.innerHTML = "";
+            main.textContent = "";
             for (const iterator of previousItem) {
                 const div = document.createElement("div");
                 const img = document.createElement("img");
