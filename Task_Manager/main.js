@@ -26,13 +26,11 @@ async function getTodos() {
         // console.log(todos);
         todos?.map((todo) => {
             let todoItem = `
-            <div id=${todo?.id} class="flex gap-2 justify-between items-center flex-wrap bg-slate-100 p-2">
+            <div id=${todo?.id} class="flex gap-4 flex-wrap items-center bg-slate-100 p-2">
             ${todo.status === "complete" ? '' : '<input type="checkbox" class="check">'}
-                    <p>${todo?.title}</p>
-                    <button class="delete">
-                    <img src="./icons8-cross.svg" width="25" height="25" alt="Icon" />
-                  </button>
-                </div>
+            <p>${todo?.title}</p>
+            <button class="delete"><img src="./icons8-cross.svg" width="25" height="25" alt="Icon" /></button>
+            </div>
         `
             if (todo.status === "todo") {
                 todoDiv.innerHTML += todoItem;
