@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", initialize);
 // Setting all initial code immediately after DOM load.
 function initialize() {
     if (window.location.pathname === "/") {
-        window.location.replace(`http://localhost:5173/meme?demo=&theme=`);
+        window.location.replace(`${window.location.origin}/meme?demo=&theme=`);
         return;
     }
     url = new URL(window.location);
@@ -44,7 +44,7 @@ function initialize() {
     showFavouriteMemes();
 }
 
-// Take input from search input box and call fetch after 2sec.
+// Take input from search input box and call fetch after 1sec.
 let callfetch;
 function searchInput(e) {
     clearTimeout(callfetch);
@@ -54,7 +54,7 @@ function searchInput(e) {
         inputWarning.textContent = "";
         callfetch = setTimeout(() => {
             getMemes(e.target.value)
-        }, 2000)
+        }, 1000)
     }
 }
 
@@ -147,8 +147,8 @@ async function getMemes(keyword) {
             p1.innerText = "Unauthorized key or API request reached its limit";
             p2.innerText = "Please try new API key or use mock API ";
             a.setAttribute("class", "underline");
-            a.setAttribute("href", "http://localhost:5173/meme?demo=true&theme=");
-            a.innerText = "http://localhost:5173/meme?demo=true&theme=";
+            a.setAttribute("href", `${window.location.origin}/meme?demo=true&theme=`);
+            a.innerText = `${window.location.origin}/meme?demo=true&theme=`;
             p2.appendChild(a);
             nomemesAlert.appendChild(p1);
             nomemesAlert.appendChild(p2);
