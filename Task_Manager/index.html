@@ -1,70 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body class="flex flex-col justify-center items-center max-w-full min-h-[100vh]">
-    <div class="lg:w-[80%] w-[90%]  my-0 mx-auto ">
 
-      <header class="w-full flex flex-col justify-center items-center mb-8">
-          <h1 class="text-3xl font-bold font-sans text-center">Task Manager</h1>
-          <p class="font-sans font-medium text-slate-500 text-center">Stay organized and productive with our intuitive to-do app</p>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task manager</title>
+</head>
 
-        <form action="" class="form w-full flex justify-center items-center flex-wrap mt-4">
-          <input 
-          type="text" 
-          placeholder="Add a new task in todo" 
-          class="border-[1px] bg-slate-100 p-2 md:w-[50%] w-full m-3 rounded-md"
-          name="todo"
-          />
-          <button class="w-[100px] p-[8px] bg-[#101827] text-white rounded-md" type="submit">Add Todo</button>
-        </form>
-      </header>
+<body class="flex flex-col justify-center items-center max-w-full min-h-[100vh]">
+  <div class="lg:w-[80%] w-[90%]  my-0 mx-auto ">
 
-      <main class="grid md:grid-cols-3 gap-5">
-        <div class="shadow-md rounded-md pb-1">
-          <h1 class="bg-[rgb(219,233,254)] p-3 rounded-t-md font-bold">To Do</h1>
-          <div class="flex flex-col gap-4 todo">
-            <!-- <div class="flex gap-2 justify-between items-center flex-wrap bg-slate-100 p-2">
-              <input type="checkbox">
-              <p class="">This is my asdadasddadaadadaasdadfirst to do</p>
-              <object data="./icons8-cross.svg" width="25" height="25" type=""></object>
-            </div> -->
+    <header class="w-full flex flex-col justify-center items-center mb-8">
+      <h1 class="text-3xl font-bold font-sans text-center">Task Manager</h1>
+      <p class="font-sans font-medium text-slate-500 text-center">Stay organized and productive with our intuitive to-do
+        app</p>
 
-          </div>
+      <form action="" class="form w-full flex justify-center items-center flex-wrap mt-4">
+        <input type="text" placeholder="Add a new task in todo"
+          class="border-[1px] bg-slate-100 p-2 md:w-[50%] w-full m-3 rounded-md" name="todo" />
+        <button class="w-[100px] p-[8px] bg-[#101827] text-white rounded-md" type="submit">Add Todo</button>
+      </form>
+    </header>
+
+    <main class="grid md:grid-cols-3 gap-5">
+      <div class="shadow-md rounded-md pb-1">
+        <h1 class="bg-[rgb(219,233,254)] p-3 rounded-t-md font-bold">To Do</h1>
+        <div class="flex flex-col gap-4 todo">
+
         </div>
+      </div>
 
-        <div class="shadow-md rounded-md pb-1">
-          <h1 class="bg-[#F3E8FF] p-3 rounded-t-md font-bold">In Progress</h1>
-          <div class="flex flex-col gap-4 prog">
+      <div class="shadow-md rounded-md pb-1">
+        <h1 class="bg-[#F3E8FF] p-3 rounded-t-md font-bold">In Progress</h1>
+        <div class="flex flex-col gap-4 prog">
 
-            <!-- <div class="flex gap-2 justify-between items-center flex-wrap bg-slate-100 p-2">
-              <input type="checkbox">
-              <p class="">This is my asdadasddadaadadaasdadfirst to do</p>
-              <object data="./icons8-cross.svg" width="25" height="25" type=""></object>
-            </div> -->
-
-          </div>
         </div>
+      </div>
 
-        <div class="shadow-md rounded-md pb-1">
-          <h1 class="bg-[#DCFCE7] p-3 rounded-t-md font-bold">Completed</h1>
-          <div class="flex flex-col gap-4 complete">
+      <div class="shadow-md rounded-md pb-1">
+        <h1 class="bg-[#DCFCE7] p-3 rounded-t-md font-bold">Completed</h1>
+        <div class="flex flex-col gap-4 complete">
 
-            <!-- <div class="flex gap-2 justify-between items-center flex-wrap bg-slate-100 p-2">
-              <input type="checkbox">
-              <p class="">This is my asdadasddadaadadaasdadfirst to do</p>
-              <object data="./icons8-cross.svg" width="25" height="25" type=""></object>
-            </div> -->
-
-          </div>
         </div>
+      </div>
 
-      </main>
-    </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
