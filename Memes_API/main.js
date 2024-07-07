@@ -108,7 +108,6 @@ function saveApiKey(e) {
     }
 }
 
-
 // Showing API key modal button when no "apikey" in localStorage.
 function showModal() {
     apiModal.textContent = "";
